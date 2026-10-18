@@ -162,15 +162,55 @@ body.admin { background: #f6f3ef; }
 .bad-text { color: var(--bad); }
 
 @media (max-width: 900px) {
-  .app { grid-template-columns: 1fr; }
-  .side { position: static; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; padding: 12px; }
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .side { position: sticky; top: 0; z-index: 20; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; padding: 10px 12px 6px; min-width: 0; }
+  .side nav { min-width: 0; scrollbar-width: none; }
+  .side nav::-webkit-scrollbar { display: none; }
   .side-sub, .nav-sep { display: none; }
   .side nav { display: flex; overflow-x: auto; flex-basis: 100%; order: 3; }
   .side nav button { white-space: nowrap; }
-  .side-foot { margin: 0 auto 0 0; display: flex; }
+  .side .brand { font-size: 20px; }
+  .side-foot { margin: 0 auto 0 0; display: flex; gap: 6px; }
+  .side-foot .btn { width: auto; padding: 5px 12px; font-size: 13px; }
+  .side nav button { padding: 8px 10px; }
+  .page-head { flex-wrap: wrap; }
+  .page-head h1 { font-size: 28px; }
+  .kpis { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .kpi { padding: 10px 12px; }
+  .kpi b { font-size: 22px; }
+  .toolbar .input { min-width: 0; flex: 1 1 140px; }
+  .legend { margin-inline-start: 0; flex-wrap: wrap; }
+  .cal-wrap { max-height: calc(100vh - 200px); }
+  .cal .sticky { min-width: 118px; max-width: 118px; }
+  .cal tbody th.sticky { padding: 4px 6px; gap: 6px; font-size: 11px; }
+  .cal tbody th img { width: 22px; height: 22px; }
+  .cal thead th, .cal td.c { min-width: 32px; }
+  .cal td.c { height: 34px; font-size: 11px; }
+  .modal-back { padding: 8px; }
+  .edit-foot { flex-wrap: wrap; }
+  .unit-strip { grid-template-columns: 1fr 1fr; }
   .main { padding: 20px 16px 40px; }
   .edit-cols, .dash-grid { grid-template-columns: 1fr; }
   .banner-row { grid-template-columns: 1fr; }
   .banner-row img { width: 100%; }
   .tbl { display: block; overflow-x: auto; }
+}
+
+/* phones: tables become stacked cards */
+@media (max-width: 640px) {
+  .tabs { overflow-x: auto; scrollbar-width: none; }
+  .tabs button { white-space: nowrap; padding: 10px; }
+  .tbl:not(.compact) { display: block; border: 0; background: none; overflow: visible; }
+  .tbl:not(.compact) thead { display: none; }
+  .tbl:not(.compact) tbody { display: grid; gap: 10px; }
+  .tbl:not(.compact) tr { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+  .tbl:not(.compact) td { border: 0; padding: 0; }
+  .tbl:not(.compact) td:empty { display: none; }
+  #view .tbl tr[data-order] td:nth-child(2) { flex: 1 1 60%; }
+  #view .tbl tr[data-order] td:nth-child(3) { flex-basis: 100%; order: 3; }
+  #view .tbl tr[data-order] td:nth-child(3) div { display: inline; margin-inline-start: 6px; }
+  #view .tbl tr[data-order] td:nth-child(4) { flex-basis: 100%; order: 4; }
+  #view .tbl tr[data-order] td:nth-child(5) { order: 5; font-weight: 700; }
+  #view .tbl tr[data-order] td:nth-child(6) { order: 6; }
+  #view .tbl tr[data-order] td:nth-child(7) { order: 7; margin-inline-start: auto; }
 }
