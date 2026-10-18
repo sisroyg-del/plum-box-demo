@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>plum box · השכרת אקססוריז לימי צילום</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/common.css?v=5">
+  <link rel="stylesheet" href="assets/css/shop.css?v=5">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='8' width='26' height='18' rx='4' fill='%236b2e5f'/></svg>">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="brand" href="shop.html"><span class="dot"></span><span class="brand-name">plum box</span></a>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="חיפוש: אגרטל ירוק, כרית קטיפה, תמונה…" autocomplete="off">
+      </div>
+      <button class="date-chip" id="dateChip" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <span id="dateChipText">מתי יום הצילום?</span>
+      </button>
+      <button class="icon-btn" id="accountBtn" type="button" aria-label="חשבון">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      </button>
+      <button class="icon-btn" id="cartBtn" type="button" aria-label="סל הזמנה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18l-2 13H5L3 7Z"/><path d="M8 7a4 4 0 0 1 8 0"/></svg>
+        <span class="badge" id="cartCount" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero" aria-roledescription="carousel"></section>
+
+  <nav class="filters" id="filters"></nav>
+
+  <main id="catalog" class="catalog"></main>
+
+  <section class="tracks">
+    <div class="tracks-inner">
+      <div class="track">
+        <span class="track-n">01</span>
+        <h3>חבילות אבזור מובנות</h3>
+        <p>סטים שנתפרו מראש לפי צבע. מהיר, הרמוני ומשתלם.</p>
+        <button class="btn ghost sm" data-go="packages">לחבילות</button>
+      </div>
+      <div class="track">
+        <span class="track-n">02</span>
+        <h3>בחירה חופשית מהקטלוג</h3>
+        <p>ליקוט עצמאי של פריטים בודדים, בדיוק מה שחסר ליום הצילום.</p>
+        <button class="btn ghost sm" data-go="all">לקטלוג המלא</button>
+      </div>
+      <div class="track featured">
+        <span class="track-n">03</span>
+        <h3>ייעוץ וליווי אישי</h3>
+        <p>עין נוספת לבחירת הציוד, להעמדה ולקומפוזיציה ביום הצילום.</p>
+        <button class="btn light sm" id="consultBtn">לתיאום שיחה</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div><span class="brand"><span class="dot"></span>plum box</span><p class="muted small">השכרת אקססוריז לימי צילום · חיפה<br>כל הפריטים מגיעים בארגזים מרופדים, בלי עטיפות: רק לשלוף ולצלם.</p></div>
+    <div class="muted small">גרסת דמו · <a href="admin.html">כניסת מפעיל</a> · <a href="index.html">אודות הדמו</a></div>
+  </footer>
+
+  <div id="drawer" class="drawer" hidden></div>
+  <div id="modalRoot"></div>
+
+  <script src="assets/js/store.js?v=5"></script>
+  <script src="assets/js/inventory.js?v=5"></script>
+  <script src="assets/js/datepicker.js?v=5"></script>
+  <script src="assets/js/ui.js?v=5"></script>
+  <script src="assets/js/shop.js?v=5"></script>
+</body>
+</html>
